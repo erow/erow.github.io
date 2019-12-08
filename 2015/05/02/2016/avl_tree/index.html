@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, erow">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="erow's blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized-light.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>avl tree | erow's blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">erow's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container" style="background: url(/images/background.png);">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://erow.github.io/2015/05/02/2016/avl_tree/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="erow">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="erow's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">avl tree</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2015-05-02T05:01:00+00:00">2015-05-02 13:01:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="定义"><a href="#定义" class="headerlink" title="定义:"></a>定义:</h2><p>一棵空二叉树是AVL树，如果T是非空二叉树，TL和TR分别是其左子树和右子树，<br>则当且仅当TL和TR都为AVL树且|HL-HR|&lt;=1时，T是AVL树。<br>AVL树的高度:（固定节点数计算最大高度）<br>AVL树节点的平衡因子:<br>AVL树节点的平衡因子定义为其左子树的高度减去右子树的高度，我们可以在插入和删除操作的时候更新平衡因子。<br>一棵AVL树的各节点平衡因子为1，-1, 0</p>
+<h2 id="树的旋转"><a href="#树的旋转" class="headerlink" title="树的旋转:"></a>树的旋转:</h2><p>当树的平衡因子的绝对值大于1，则该avl树不平衡。旋转通过调整子树和根的位置来重新获得平衡。</p>
+<h2 id="理论分析"><a href="#理论分析" class="headerlink" title="理论分析:"></a>理论分析:</h2><blockquote>
+<p>T代表树根节点，TL代表左子树，TR代表又子树。以此类推。*H表示树高。’代表旋转后的新值。</p>
+</blockquote>
+<p>由于旋转具有对称性，所有只讨论左旋。</p>
+<p>左旋后以TR的节点为根(T’=TR)，TRR成为新的右子树(TR’=TRR)。TL’=T</p>
+<blockquote>
+<p>HL’=max(HL,HRL)+1。</p>
+<p>新的平衡因子G’为HL’-HR’=max(HL,HRL)-HRR+1;</p>
+<p>HL-max(HRL,HRR)-1&lt;-1  =&gt;  HL&lt; max(HRL,HRR)</p>
+</blockquote>
+<p>若HRL&gt;HRR,HL,G’=GR’+1.有可能破坏平衡</p>
+<p>若HRR&gt;HRL。HL&lt;HRL,G’=GR’+1(不会破坏平衡)</p>
+<p>针对HRL&gt;HRR,使用特殊的旋转。</p>
+<h2 id="实际分析"><a href="#实际分析" class="headerlink" title="实际分析:"></a>实际分析:</h2><p>G代表平衡因子。<br>插入操作，导致某处的G为2或-2.<br>右旋时的分析:</p>
+<p><img src="/blog_images/s.png" alt=""><br>针对GL==-1这种情况简单右旋不能使之平衡。故使用左-右旋。</p>
+<p><img src="/blog_images/b.png" alt=""></p>
+<p>对于左旋，有相同的性质，只是左右互换。<br>由此推出以下性质:  </p>
+<ol>
+<li>旋转不会改变其子树的平衡状态  </li>
+<li>旋转以后会使树高-1.</li>
+</ol>
+<p>插入:随着插入，树的平衡性会被打破，此时可以4种选择方法解决。  </p>
+<ol>
+<li>简单右旋:当插入项位于最近的平衡因子为+2的祖先节点的左孩子的左子树中时。LL  </li>
+<li>简单左旋:当插入项位于最近的平衡因子为- 2的祖先节点的右孩子的右子树中时。RR  </li>
+<li>左—右旋:当插入项位于最近的平衡因子为+2的祖先节点的左孩子的右子树中时。LR  </li>
+<li>右—左旋:当插入项位于最近的平衡因子为- 2的祖先节点的右孩子的左子树中时。RL<br>这样旋转以后树的高度不变。</li>
+</ol>
+<p>D为插入的元素。</p>
+<p>插入操作<br>旋转操作能使树高-1，使破坏的平衡恢复<br>当G=-2时，使用左旋，G’=GR+1。  仅当GR=-1时GL’=0，其余GL’=-1.<br>    若GR=1,则对TR使用右旋，GR’=-1,再对T使用左旋，G’=0.<br>当G= 2时，使用右旋， G’=GL-1。仅当GL=    1时GR’=0，其余GR’=1.<br>    若GL=-1,则对TL使用左旋， GL’= 1,再对T使用右旋，G’=0.</p>
+<p>插入时使用递归函数可以获得子数的状态，通过返回一个高度参数grow，来进行平衡因子的修正。</p>
+<p>1.根据数值判断插入的方向<br>    int g;<br>            if(insertData(pNode-&gt;m_pLChild,data,g,route)==exist)<br>2.若左子树增长，在G==-1时，树高不变。在其余情况下树高增加。<br>   若右子树增长，在G== 1时，树高不变。在其余情况下树高增加。<br>3.判断是否破坏平衡。</p>
+<p><img src="/blog_images/a.png" alt=""></p>
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><figure class="hljs highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">删除元素有可能使树高<span class="hljs-number">-1</span>，使用平衡操作（旋转）后。该子树进入平衡状态，但有可能导致父节点的不平衡。<br>类似插入操作，通过递归来获得树高的变化。<br>但是在子树高度减少的情况下树高变化不同。<br></code></pre></td></tr></table></figure>
+<p>若左子树减少，在G== 1时，树高不变。在其余情况下树高减少。<br>若右子树减少，在G==-1时，树高不变。在其余情况下树高减少。</p>
+<p>以上分析对删除叶节点有效，在删除中间节点时。删除节点的子树处理比较困难。<br>因而使用交换，将删除节点与右子树的最小元素交换。再使用删除操作，转化为删除叶节点。</p>
+<p>程序分析:<br>对T的右旋操作</p>
+<p>1.将保存L,断开T-L,。</p>
+<p>2.断开L-LR,LR成为T的左子树</p>
+<p>3.T成为L的右子树，L成为新的根。</p>
+<hr>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">balance</span><span class="hljs-params">(avl* &amp;root,<span class="hljs-keyword">int</span> cl,<span class="hljs-keyword">int</span> cr)</span><br></span>&#123;<br>	avl*tl=root-&gt;l,*tr=root-&gt;r;<br>	avl* t=root;<br>	<span class="hljs-keyword">if</span>((cr-cl)==<span class="hljs-number">2</span>)&#123;<br>		<span class="hljs-keyword">if</span>(deep(tr-&gt;l)&gt;deep(tr-&gt;r))&#123;<br>			<span class="hljs-keyword">auto</span> nroot=tr-&gt;l;<br>			t-&gt;r=nroot-&gt;l;<br>			tr-&gt;l=nroot-&gt;r;<br>			root=nroot;<br>			root-&gt;l=t;<br>			root-&gt;r=tr;<br>			<br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			t-&gt;r=tr-&gt;l;<br>			root=tr;<br>			root-&gt;l=t;<br>		&#125;<br>		<span class="hljs-keyword">return</span> cr;<br>	&#125;<br>	<span class="hljs-keyword">if</span>((cl-cr)==<span class="hljs-number">2</span>)&#123;<br>		<span class="hljs-keyword">if</span>(deep(tl-&gt;l)&lt;deep(tl-&gt;r))&#123;<br>			<span class="hljs-keyword">auto</span> nroot=tl-&gt;r;<br>			t-&gt;l=nroot-&gt;r;<br>			tl-&gt;r=nroot-&gt;l;<br>			root=nroot;<br>			root-&gt;r=t;<br>			root-&gt;l=tl;<br>			<br>		&#125;<span class="hljs-keyword">else</span>&#123;<br>			t-&gt;l=tl-&gt;r;<br>			root=tl;<br>			root-&gt;r=t;<br>		&#125;<br>		<span class="hljs-keyword">return</span> cl;<br>	&#125;<br>	assert(<span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>AVL树并不是非要旋转才行。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/sort/" rel="tag"><i class="fas fa-tags"></i>sort</a>
+        
+        <a class="post-tag button" href="/tags/tree/" rel="tag"><i class="fas fa-tags"></i>tree</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.JPG" alt="支付宝">
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2015/05/02/2016/编程思想/" rel="next" title="erlang 数据传递"><i class="fas fa-angle-left"></i><span class="nav-title">erlang 数据传递</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2015/05/02/2016/erl-命令参数/" rel="prev" title="erl 命令"><span class="nav-title">erl 命令</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "erow",
+      "repo": "hexo_blog",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "avl tree",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="erow">
+  
+  <h1 class="author-name">erow</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">27</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#定义"><span class="toc-text">定义:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#树的旋转"><span class="toc-text">树的旋转:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#理论分析"><span class="toc-text">理论分析:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#实际分析"><span class="toc-text">实际分析:</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#删除操作"><span class="toc-text">删除操作</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:clouderow@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/erow" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><a href="" target="_blank">虚位以待</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">erow</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

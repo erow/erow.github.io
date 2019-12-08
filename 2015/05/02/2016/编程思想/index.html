@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, erow">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="erow's blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized-light.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>erlang 数据传递 | erow's blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">erow's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container" style="background: url(/images/background.png);">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://erow.github.io/2015/05/02/2016/编程思想/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="erow">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="erow's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">erlang 数据传递</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2015-05-02T05:01:00+00:00">2015-05-02 13:01:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/erlang/" itemprop="url" rel="index"><span itemprop="name">erlang</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>学习完erlang的基本语法，发觉这门语言的语法还算简单，要掌握的东西并不多，有几点感悟:<strong>模式匹配</strong>实在是太好用了，<strong>无全局变量</strong>、<strong>不能修改变量</strong>这两条似乎处处制约着编写程序。</p>
+<p><code>Talk is cheap,show me the code</code></p>
+<h1 id="简单的双人聊天室"><a href="#简单的双人聊天室" class="headerlink" title="简单的双人聊天室"></a>简单的双人聊天室</h1><p>这里需要三个角色:user1，user2，server。</p>
+<p>user需要2个操作:send，recv。</p>
+<h2 id="程序分析"><a href="#程序分析" class="headerlink" title="程序分析"></a>程序分析</h2><figure class="hljs highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-number">1.</span> user1发出消息，那么系统将其收入待处理的队列中。<br><span class="hljs-number">2.</span> 随后user2接收了消息，<span class="hljs-comment">remain队列中的数据同时交给user2和history队列，remain变空。</span><br></code></pre></td></tr></table></figure>
+<h2 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h2><figure class="hljs highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-number">1.</span> <span class="hljs-comment">remain、history队列在每次请求之后都会变化。</span><br><span class="hljs-number">2.</span> 没有全局变量，该如何取得<span class="hljs-number">2</span>个队列<br></code></pre></td></tr></table></figure>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">其实第一个问题的答案不言而喻，erlang只能使用函数来修改数据。所以代码应该长成这样<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-function"><span class="hljs-title">handle</span><span class="hljs-params">(S)</span>-&gt;</span><br>    NewS...<br>    handle(NewS).<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">这个参数S从在修改的过程中随处可见，不正是所需要的<span class="hljs-string">"全局变量"</span>?<br>只要将修改、获取的操作都放在<span class="hljs-keyword">handle</span>里，这样一来二个问题都解决了。<br></code></pre></td></tr></table></figure>
+<p>但是这又引入了新的问题，handle不能空转，它需要user给它指示。<br>erlang自带的消息功能将派上大用场。</p>
+<figure class="hljs highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">Send:<br>pid| <span class="hljs-type">registered</span> name |  <span class="hljs-type">&#123;Name</span>,Node&#125;  ! message<br><br>receive<br>    Pattern1 [when GuardSeq1] -&gt; Body1<br>    [<span class="hljs-built_in">after</span> <span class="hljs-keyword">Timeout</span>-&gt;Body2]<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<p>每一个进程都有自己的信箱，只有匹配的信件才会被取出。利用信箱来完成消息的同步，就能实现以聊天功能了。顺便模仿一下gen_server的写法。其主要特点有:1.使用behaviour模式，使得灵活地创建各类模块；2.用一个结构化变量来存储所需的数据。</p>
+<p>下面给出完整代码:</p>
+<p>s_gen_server.erl:<br><figure class="hljs highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">%%%-------------------------------------------------------------------</span><br><span class="hljs-comment">%%% @author PC</span><br><span class="hljs-comment">%%% @copyright (C) 2016, &lt;COMPANY&gt;</span><br><span class="hljs-comment">%%% @doc</span><br><span class="hljs-comment">%%%</span><br><span class="hljs-comment">%%% @end</span><br><span class="hljs-comment">%%% Created : 15. 涓冩湀 2016 10:04</span><br><span class="hljs-comment">%%%-------------------------------------------------------------------</span><br><span class="hljs-keyword">-module</span><span class="hljs-params">(s_gen_server)</span>.<br><span class="hljs-keyword">-author</span><span class="hljs-params">(<span class="hljs-string">"PC"</span>)</span>.<br><span class="hljs-comment">%% API</span><br><span class="hljs-keyword">-export</span><span class="hljs-params">([call/<span class="hljs-number">2</span>, terminate/<span class="hljs-number">1</span>, main/<span class="hljs-number">1</span>])</span>.<br><span class="hljs-comment">%% behaviour</span><br><span class="hljs-keyword">-export</span><span class="hljs-params">([start_link/<span class="hljs-number">2</span>, behaviour_info/<span class="hljs-number">1</span>, handle/<span class="hljs-number">1</span>, init/<span class="hljs-number">2</span>])</span>.<br><span class="hljs-comment">%%-spec init(Arg)-&gt;&#123;ok,state&#125;|&#123;error,Reason&#125;.</span><br><span class="hljs-comment">%%-spec handle_call(Request,From,State) -&gt; &#123;ok,new_state&#125;|&#123;error,Reason&#125;.</span><br><span class="hljs-comment">%%-spec start_link(Module, Args)-&gt;Result.</span><br><span class="hljs-comment">%%Result=&#123;ok,Pid&#125;.</span><br><span class="hljs-function"><span class="hljs-title">behaviour_info</span><span class="hljs-params">(callbacks)</span> -&gt;</span><br> [&#123;init, <span class="hljs-number">1</span>&#125;,<br> &#123;handle_call, <span class="hljs-number">3</span>&#125;];<br><span class="hljs-function"><span class="hljs-title">behaviour_info</span><span class="hljs-params">(_Other)</span> -&gt;</span><br> undefined.<br><span class="hljs-function"><span class="hljs-title">handle</span><span class="hljs-params">(State)</span> -&gt;</span><br> <span class="hljs-keyword">receive</span><br> &#123;Module, From, Request&#125; -&gt;<br> <span class="hljs-keyword">case</span> Module:handle_call(Request, From, State) <span class="hljs-keyword">of</span><br> &#123;_Type, _State&#125; -&gt; From ! &#123;_Type, _State&#125;, handle(_State)<br> <span class="hljs-keyword">end</span>;<br> stop -&gt;<br> <span class="hljs-keyword">receive</span><br> Bagger -&gt; io:format(<span class="hljs-string">"~p~n"</span>, [Bagger])<br> <span class="hljs-keyword">after</span><br> <span class="hljs-number">1</span> -&gt; finish<br> <span class="hljs-keyword">end</span><br> <span class="hljs-keyword">end</span>.<br><span class="hljs-comment">%%API</span><br><span class="hljs-function"><span class="hljs-title">start_link</span><span class="hljs-params">(Module, Args)</span> -&gt;</span><br> Pid=spawn(?MODULE, init, [Module, Args]),<br> register(Module,Pid).<br><span class="hljs-function"><span class="hljs-title">init</span><span class="hljs-params">(Module, Args)</span> -&gt;</span><br> &#123;ok, State&#125; = Module:init(Args),<br> handle(State).<br><span class="hljs-function"><span class="hljs-title">call</span><span class="hljs-params">(Module, Request)</span> -&gt;</span><br> Module ! &#123;Module, self(), Request&#125;,<br> <span class="hljs-keyword">receive</span><br> &#123;noreply, _State&#125; -&gt; ok;<br> &#123;reply, State&#125; -&gt; State<br> <span class="hljs-keyword">end</span>.<br><span class="hljs-function"><span class="hljs-title">terminate</span><span class="hljs-params">(Module)</span> -&gt;</span><br> Module ! stop.<br><span class="hljs-function"><span class="hljs-title">main</span><span class="hljs-params">(_T)</span> -&gt;</span><br> start_link(chat, <span class="hljs-string">"chat_center"</span>).<br></code></pre></td></tr></table></figure></p>
+<p>chat_server.erl:<br><figure class="hljs highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">%%%-------------------------------------------------------------------</span><br><span class="hljs-comment">%%% @author PC</span><br><span class="hljs-comment">%%% @copyright (C) 2016, &lt;COMPANY&gt;</span><br><span class="hljs-comment">%%% @doc</span><br><span class="hljs-comment">%%%</span><br><span class="hljs-comment">%%% @end</span><br><span class="hljs-comment">%%% Created : 15. 涓冩湀 2016 10:23</span><br><span class="hljs-comment">%%%-------------------------------------------------------------------</span><br><span class="hljs-keyword">-module</span><span class="hljs-params">(chat_server)</span>.<br><span class="hljs-keyword">-author</span><span class="hljs-params">(<span class="hljs-string">"PC"</span>)</span>.<br><span class="hljs-keyword">-behaviour</span><span class="hljs-params">(s_gen_server)</span>.<br><span class="hljs-comment">%% history=[Msg::&#123;who,string()&#125;]</span><br><span class="hljs-keyword">-record</span><span class="hljs-params">(state, &#123;history = [], remain = [], servername&#125;)</span>.<br><span class="hljs-keyword">-export</span><span class="hljs-params">([init/<span class="hljs-number">1</span>, handle_call/<span class="hljs-number">3</span>])</span>.<br><span class="hljs-comment">%% API</span><br><span class="hljs-keyword">-export</span><span class="hljs-params">([start_link/<span class="hljs-number">0</span>, recv/<span class="hljs-number">0</span>, send/<span class="hljs-number">2</span>,stop/<span class="hljs-number">0</span>,show_history/<span class="hljs-number">0</span>])</span>.<br><span class="hljs-function"><span class="hljs-title">start_link</span><span class="hljs-params">()</span> -&gt;</span><br> s_gen_server:start_link(?MODULE, <span class="hljs-string">"chat_center"</span>).<br><span class="hljs-function"><span class="hljs-title">send</span><span class="hljs-params">(Who, Word)</span> -&gt;</span><br> s_gen_server:call(?MODULE, &#123;send, Who, Word&#125;).<br><span class="hljs-function"><span class="hljs-title">show_history</span><span class="hljs-params">()</span> -&gt;</span><br> State = s_gen_server:call(?MODULE, fetch),<br> State#state.history.<br><span class="hljs-function"><span class="hljs-title">stop</span><span class="hljs-params">()</span> -&gt;</span><br> s_gen_server:terminate(?MODULE).<br><span class="hljs-keyword">-spec</span> recv<span class="hljs-params">()</span> -&gt; #state&#123;&#125; .<br><span class="hljs-function"><span class="hljs-title">recv</span><span class="hljs-params">()</span> -&gt;</span><br> State = s_gen_server:call(?MODULE, fetch),<br> s_gen_server:call(?MODULE, &#123;update, State#state&#123;remain = [], history = State#state.history ++ [State#state.remain]&#125;&#125;),<br> State#state.remain.<br><span class="hljs-comment">%% behaviour</span><br><span class="hljs-function"><span class="hljs-title">init</span><span class="hljs-params">(_Arg)</span> -&gt;</span><br> &#123;ok, #state&#123;servername = _Arg&#125;&#125;.<br><span class="hljs-function"><span class="hljs-title">handle_call</span><span class="hljs-params">(&#123;send, Who, String&#125;, _From, State)</span> -&gt;</span><br> &#123;noreply, #state&#123;remain = State#state.remain ++ [&#123;Who, String&#125;]&#125;&#125;;<br><span class="hljs-function"><span class="hljs-title">handle_call</span><span class="hljs-params">(fetch, _From, State)</span> -&gt;</span><br> &#123;reply, State&#125;;<br><span class="hljs-function"><span class="hljs-title">handle_call</span><span class="hljs-params">(&#123;update, NewState&#125;, _From, _)</span> -&gt;</span><br> &#123;noreply, NewState&#125;.<br></code></pre></td></tr></table></figure></p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.JPG" alt="支付宝">
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2015/05/02/2016/struct/" rel="next" title="erl 数据结构"><i class="fas fa-angle-left"></i><span class="nav-title">erl 数据结构</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2015/05/02/2016/avl_tree/" rel="prev" title="avl tree"><span class="nav-title">avl tree</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "erow",
+      "repo": "hexo_blog",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "erlang 数据传递",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="erow">
+  
+  <h1 class="author-name">erow</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">27</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#简单的双人聊天室"><span class="toc-text">简单的双人聊天室</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#程序分析"><span class="toc-text">程序分析</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#难点"><span class="toc-text">难点</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#解决"><span class="toc-text">解决</span></a></li></ol></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:clouderow@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/erow" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><a href="" target="_blank">虚位以待</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">erow</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

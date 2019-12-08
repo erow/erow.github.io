@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, erow">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="erow's blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized-light.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>绘图 | erow's blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">erow's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container" style="background: url(/images/background.png);">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://erow.github.io/2019/04/07/2019/绘图/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="erow">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="erow's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">绘图</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-07T09:27:54+00:00">2019-04-07 17:27:54</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>绘制图形的工具比较多，常用的有matplotlib，plotly，以及pytorch的visdom。matplotlib用的比较多，功能也十分强大也比较底层。可以设置的参数也多，用起来比较麻烦。相反visdom使用更加简便，也提供了足够的功能。两者最大的区别是，visdom是运行于云端的，自身也提供了存储，适合简单地分析使用。而matplotlib能绘制更加复杂，个性化的图。因此我打算在项目运行中使用visdom，这样我可以在云端实时监控训练状态。在论文中，如果需要更复杂的图就使用matplotlib。而plotly制作的图形更加强大，也提供云端访问和数据编辑功能，作为企业级的数据展示更加合理。</p>
+<p>建议使用半天时间掌握visdom，和几类基本图形。再花半天时间理解matplotlib的概念和用法，毕竟很多代码是使用这个的且与matlab类似，要能读懂。编写项目展示的时候使用plotly，这个比较专业，最好是团队中有专人掌握，一般没必要精通。</p>
+<h1 id="visdom"><a href="#visdom" class="headerlink" title="visdom"></a><a href="https://github.com/facebookresearch/visdom" target="_blank" rel="noopener">visdom</a></h1><p>基本概念： window，env，state，filter,view</p>
+<h2 id="env-gt-window-view"><a href="#env-gt-window-view" class="headerlink" title="env-&gt;window - view"></a>env-&gt;window - view</h2><h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p>window是承载内容的主体，其数据存储在state中（.visdom目录下会创建json文件）。他是一个UI组件，可以显示plots, images, and text。还可以注册<code>callback</code>来监听用户的操作。</p>
+<h2 id="environment"><a href="#environment" class="headerlink" title="environment"></a>environment</h2><p>所有windowy以env为一组进行组织。</p>
+<blockquote>
+<p>当有大量数据需要实时绘制时。如果需要对比他们，最好放在同一个env下。多个env会消耗大量资源</p>
+</blockquote>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>filter使用<strong>正则表达式</strong>来匹配window的title。</p>
+<h2 id="view"><a href="#view" class="headerlink" title="view"></a>view</h2><p>view是window的排列方式</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ol>
+<li><p>Visdom实例<br> <code>visdom</code> Arguments  </p>
+<ul>
+<li>server</li>
+<li>port</li>
+<li>offline 启用时将数据存在本地</li>
+<li>log_to_filename</li>
+</ul>
+</li>
+<li><p>绘图  </p>
+<ul>
+<li>vis.image : <code>CxHxW</code>，显示一张图片。但是可以存储一组<code>store_history</code></li>
+<li>vis.images : <code>B x C x H x W</code></li>
+<li>vis.text : 可以嵌入 HTML</li>
+<li>vis.properties ： 输入组件,<code>Callback</code></li>
+<li>vis.audio : audio</li>
+<li>vis.video : videos</li>
+<li>vis.svg : SVG object</li>
+<li>vis.matplot : matplotlib plot</li>
+</ul>
+</li>
+<li><p><a href="https://plot.ly/python/" target="_blank" rel="noopener">Plotly</a><br> 使用plotly提供常用数据的可视化，推荐使用这种方式。这种方式存储数据，而不是图像。</p>
+<ul>
+<li>vis.scatter : 2D or 3D scatter plots</li>
+<li>vis.line : line plots</li>
+<li>vis.stem : stem plots</li>
+<li>vis.heatmap : heatmap plots</li>
+<li>vis.bar : bar graphs</li>
+<li>vis.histogram : histograms</li>
+<li>vis.boxplot : boxplots</li>
+<li>vis.surf : surface plots</li>
+<li>vis.contour : contour plots</li>
+<li>vis.quiver : quiver plots</li>
+<li>vis.mesh : mesh plots<br><img src="https://camo.githubusercontent.com/d69475a01f9f327fc42931a21df8134d1fbdfc19/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f2d62714839555843772d42452f574c3255736472726241492f41414141414141416e59632f656d727877436d6e7257345f434c54797955747442305359524a2d693443436951434c63422f73302f53637265656e2b53686f742b323031372d30332d30362b61742b31302e35312e30322b414d2e706e67253232766973646f6d5f626967253232" alt="demo"><br>扩展，可以传入一个字典结构opts  </li>
+<li>opts.title : figure title</li>
+<li>opts.width : figure width</li>
+<li>opts.height : figure height</li>
+<li>opts.showlegend : show legend (true or false)</li>
+<li>opts.xtype : type of x-axis (‘linear’ or ‘log’)</li>
+<li>opts.xlabel : label of x-axis</li>
+<li>opts.xtick : show ticks on x-axis (boolean)</li>
+<li>opts.xtickmin : first tick on x-axis (number)</li>
+<li>opts.xtickmax : last tick on x-axis (number)</li>
+<li>opts.xtickvals : locations of ticks on x-axis (table of numbers)</li>
+<li>opts.xticklabels : ticks labels on x-axis (table of strings)</li>
+<li>opts.xtickstep : distances between ticks on x-axis (number)</li>
+<li>opts.xtickfont : font for x-axis labels (dict of font information)</li>
+<li>opts.ytype : type of y-axis (‘linear’ or ‘log’)</li>
+<li>opts.ylabel : label of y-axis</li>
+<li>opts.ytick : show ticks on y-axis (boolean)</li>
+<li>opts.ytickmin : first tick on y-axis (number)</li>
+<li>opts.ytickmax : last tick on y-axis (number)</li>
+<li>opts.ytickvals : locations of ticks on y-axis (table of numbers)</li>
+<li>opts.yticklabels : ticks labels on y-axis (table of strings)</li>
+<li>opts.ytickstep : distances between ticks on y-axis (number)</li>
+<li>opts.ytickfont : font for y-axis labels (dict of font information)</li>
+<li>opts.marginleft : left margin (in pixels)</li>
+<li>opts.marginright : right margin (in pixels)</li>
+<li>opts.margintop : top margin (in pixels)</li>
+<li><p>opts.marginbottom: bottom margin (in pixels)<br><strong>自定义绘图</strong> 将数据和参数传入Plotly</p>
+  <figure class="hljs highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined">import visdom<br>vis = visdom.Visdom()<br><br><span class="hljs-keyword">trace</span> = dict(x=[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], y=[<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], mode=<span class="hljs-string">"markers+lines"</span>, type=<span class="hljs-string">'custom'</span>,<br>            <span class="hljs-keyword">marker</span>=&#123;<span class="hljs-string">'color'</span>: <span class="hljs-string">'red'</span>, <span class="hljs-string">'symbol'</span>: <span class="hljs-number">104</span>, <span class="hljs-string">'size'</span>: <span class="hljs-string">"10"</span>&#125;,<br>            <span class="hljs-keyword">text</span>=[<span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>], name=<span class="hljs-string">'1st Trace'</span>)<br><span class="hljs-keyword">layout</span> = dict(title=<span class="hljs-string">"First Plot"</span>, xaxis=&#123;<span class="hljs-string">'title'</span>: <span class="hljs-string">'x1'</span>&#125;, yaxis=&#123;<span class="hljs-string">'title'</span>: <span class="hljs-string">'x2'</span>&#125;)<br><br>vis._send(&#123;<span class="hljs-string">'data'</span>: [<span class="hljs-keyword">trace</span>], <span class="hljs-string">'layout'</span>: <span class="hljs-keyword">layout</span>, <span class="hljs-string">'win'</span>: <span class="hljs-string">'mywin'</span>&#125;)<br></code></pre></td></tr></table></figure>
+<p>  <strong>注意</strong>data中必须添加<code>type=&#39;custom&#39;</code>才能生效。而且一些内容无法显示。如果有大量内容需要使用这个功能，不如直接使用plotly。</p>
+</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/facebookresearch/visdom/blob/master/example/demo.py" target="_blank" rel="noopener">demo</a></p>
+</li>
+</ol>
+<h1 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a><a href="https://matplotlib.org/contents.html" target="_blank" rel="noopener">matplotlib</a></h1><p><img src="https://matplotlib.org/_images/anatomy.png" alt=""></p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>figure表示一张图，Axes表示一个绘图元素，一个figure可以包含多个axes。axis表示轴，可以设置刻度，标签，范围等。<br>在内部matplotlib有一个状态机来存储当前的figure与axes，默认情况下<code>plot</code>会自动创建一个新的或者重复使用上一个axes。<code>subplot</code> 在当前figure下创建多个axes.<code>subplots</code>创建新的figure和axes。</p>
+<blockquote>
+<pre><code>Call signatures::
+
+  subplot(nrows, ncols, index, **kwargs)
+  subplot(pos, **kwargs)
+  subplot(ax)
+</code></pre></blockquote>
+<p>而且<code>subplot(3,2,1)</code>等价于<code>subplot(321)</code>,其中index选中的axes可以用<code>plt.plot</code>来绘图。也可以用返回值<code>fig,ax=subplot(321)</code>来绘图。</p>
+<h2 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h2><figure class="hljs highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">matplotlib</span><span class="hljs-selector-class">.pyplot</span> <span class="hljs-selector-tag">as</span> <span class="hljs-selector-tag">plt</span><br><span class="hljs-selector-tag">plt</span><span class="hljs-selector-class">.ion</span>()<br><span class="hljs-selector-tag">plt</span><span class="hljs-selector-class">.plot</span>(<span class="hljs-selector-attr">[1.6, 2.7]</span>) #立即显示<br><span class="hljs-selector-tag">plt</span><span class="hljs-selector-class">.ioff</span>() <br><span class="hljs-selector-tag">plt</span><span class="hljs-selector-class">.show</span>() # 手动显示<br></code></pre></td></tr></table></figure>
+<h1 id="plotly"><a href="#plotly" class="headerlink" title="plotly"></a><a href="https://www.cnblogs.com/feffery/p/9293745.html" target="_blank" rel="noopener">plotly</a></h1><p>这篇文章很不错,介绍了plotly的<strong>offline</strong>,<strong>graph</strong>,<strong>trace</strong>,<strong>layout</strong>。<br>进阶需要参考<a href="https://plot.ly/python/ipython-notebook-tutorial/#getting-started" target="_blank" rel="noopener">官方文档</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/ML/" rel="tag"><i class="fas fa-tags"></i>ML</a>
+        
+        <a class="post-tag button" href="/tags/skill/" rel="tag"><i class="fas fa-tags"></i>skill</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.JPG" alt="支付宝">
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/03/14/2019/one cycle policy/" rel="next" title="The 1cycle policy"><i class="fas fa-angle-left"></i><span class="nav-title">The 1cycle policy</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/04/16/2019/如何理解神经网络/" rel="prev" title="如何理解神经网络"><span class="nav-title">如何理解神经网络</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "erow",
+      "repo": "hexo_blog",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "绘图",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="erow">
+  
+  <h1 class="author-name">erow</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">27</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#visdom"><span class="toc-text">visdom</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#env-gt-window-view"><span class="toc-text">env-&gt;window - view</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#window"><span class="toc-text">window</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#environment"><span class="toc-text">environment</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#filter"><span class="toc-text">filter</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#view"><span class="toc-text">view</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#matplotlib"><span class="toc-text">matplotlib</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#交互模式"><span class="toc-text">交互模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#plotly"><span class="toc-text">plotly</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:clouderow@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/erow" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><a href="" target="_blank">虚位以待</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">erow</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

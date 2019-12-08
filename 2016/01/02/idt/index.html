@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, erow">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="erow's blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized-light.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>中断描述表(idt)和全局描述符表(GDT) | erow's blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">erow's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container" style="background: url(/images/background.png);">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://erow.github.io/2016/01/02/idt/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="erow">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="erow's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">中断描述表(idt)和全局描述符表(GDT)</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-01-02T05:13:54+00:00">2016-01-02 13:13:54</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="GDT-的结构"><a href="#GDT-的结构" class="headerlink" title="GDT 的结构"></a>GDT 的结构</h2><p><img src="/blog_images/gdt.png" alt=""><br><figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">/* segment descriptors */</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">segdesc</span> &#123;</span><br>    <span class="hljs-keyword">unsigned</span> sd_lim_15_0 : <span class="hljs-number">16</span>;        <span class="hljs-comment">// low bits of segment limit</span><br>    <span class="hljs-keyword">unsigned</span> sd_base_15_0 : <span class="hljs-number">16</span>;        <span class="hljs-comment">// low bits of segment base address</span><br>    <span class="hljs-keyword">unsigned</span> sd_base_23_16 : <span class="hljs-number">8</span>;        <span class="hljs-comment">// middle bits of segment base address</span><br>    <span class="hljs-keyword">unsigned</span> sd_type : <span class="hljs-number">4</span>;            <span class="hljs-comment">// segment type (see STS_ constants)</span><br>    <span class="hljs-keyword">unsigned</span> sd_s : <span class="hljs-number">1</span>;                <span class="hljs-comment">// 0 = system, 1 = application</span><br>    <span class="hljs-keyword">unsigned</span> sd_dpl : <span class="hljs-number">2</span>;            <span class="hljs-comment">// descriptor Privilege Level</span><br>    <span class="hljs-keyword">unsigned</span> sd_p : <span class="hljs-number">1</span>;                <span class="hljs-comment">// present</span><br>    <span class="hljs-keyword">unsigned</span> sd_lim_19_16 : <span class="hljs-number">4</span>;        <span class="hljs-comment">// high bits of segment limit</span><br>    <span class="hljs-keyword">unsigned</span> sd_avl : <span class="hljs-number">1</span>;            <span class="hljs-comment">// unused (available for software use)</span><br>    <span class="hljs-keyword">unsigned</span> sd_rsv1 : <span class="hljs-number">1</span>;            <span class="hljs-comment">// reserved</span><br>    <span class="hljs-keyword">unsigned</span> sd_db : <span class="hljs-number">1</span>;                <span class="hljs-comment">// 0 = 16-bit segment, 1 = 32-bit segment</span><br>    <span class="hljs-keyword">unsigned</span> sd_g : <span class="hljs-number">1</span>;                <span class="hljs-comment">// granularity: limit scaled by 4K when set</span><br>    <span class="hljs-keyword">unsigned</span> sd_base_31_24 : <span class="hljs-number">8</span>;        <span class="hljs-comment">// high bits of segment base address</span><br>&#125;;<br></code></pre></td></tr></table></figure></p>
+<p>组成:</p>
+<ol>
+<li>32 位的段基址</li>
+<li>20 位的段界限</li>
+<li>1  位的D/B Flag:说明使用16位/32位的段。为1即可。</li>
+<li>1  位的G(Granularity,粒度):为 1 ,段的大小以 4 KB 为单位。为0，段的大小为1byte。</li>
+<li>1  位的L:1为64位系统。0为32位。</li>
+<li>1  位的P(segment-Present,段占用?) : 用于标志段是否在内存中。</li>
+<li>2  位的DPL:DPL(Descriptor Privilege Level)域标志着段的特权级，0为特权级，3为用户。</li>
+<li>1  位的S:S(descriptor type) flag 标志着该段是否系统段:置为 0 代表该段是系统段;置为 1 代表该段是代码段或者数据段。</li>
+<li>4  位的Type:设置数据／代码段时的读写等权限。</li>
+<li>1位的AVL:保留给操作系统软件使用的位。<br>共64位。<figure class="hljs highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#define SEG(type, base, lim, dpl)                        \<br>    (struct segdesc)&#123;                                    \<br>        ((lim) &gt;&gt; <span class="hljs-number">12</span>) &amp; <span class="hljs-number">0xffff</span>, (base) &amp; <span class="hljs-number">0xffff</span>,        \<br>        ((base) &gt;&gt; <span class="hljs-number">16</span>) &amp; <span class="hljs-number">0xff</span>, type, <span class="hljs-number">1</span>, dpl, <span class="hljs-number">1</span>,            \<br>        (unsigned)(lim) &gt;&gt; <span class="hljs-number">28</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>,                \<br>        (unsigned) (base) &gt;&gt; <span class="hljs-number">24</span>                            \<br>    &#125;<br>    <br>    <span class="hljs-comment">/* Application segment type bits */</span><br>#define STA_X       <span class="hljs-number">0x8</span>     <span class="hljs-comment">// Executable segment</span><br>#define STA_E       <span class="hljs-number">0x4</span>     <span class="hljs-comment">// Expand down (non-executable segments)</span><br>#define STA_C       <span class="hljs-number">0x4</span>     <span class="hljs-comment">// Conforming code segment (executable only)</span><br>#define STA_W       <span class="hljs-number">0x2</span>     <span class="hljs-comment">// Writeable (non-executable segments)</span><br>#define STA_R       <span class="hljs-number">0x2</span>     <span class="hljs-comment">// Readable (executable segments)</span><br>#define STA_A       <span class="hljs-number">0x1</span>     <span class="hljs-comment">// Accessed</span><br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="初始化GDT"><a href="#初始化GDT" class="headerlink" title="初始化GDT"></a>初始化GDT</h2><figure class="hljs highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">static</span> <span class="hljs-keyword">struct</span> segdesc gdt[] = &#123;<br>    SEG_NULL,<br>    [<span class="hljs-meta">SEG_KTEXT</span>] = SEG(STA_X | STA_R, <span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFFFFF</span>, DPL_KERNEL),<br>    [<span class="hljs-meta">SEG_KDATA</span>] = SEG(STA_W, <span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFFFFF</span>, DPL_KERNEL),<br>    [<span class="hljs-meta">SEG_UTEXT</span>] = SEG(STA_X | STA_R, <span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFFFFF</span>, DPL_USER),<br>    [<span class="hljs-meta">SEG_UDATA</span>] = SEG(STA_W, <span class="hljs-number">0x0</span>, <span class="hljs-number">0xFFFFFFFF</span>, DPL_USER),<br>    [<span class="hljs-meta">SEG_TSS</span>]    = SEG_NULL,<br>&#125;;<br><br><span class="hljs-keyword">static</span> <span class="hljs-keyword">struct</span> pseudodesc gdt_pd = &#123;<br>    <span class="hljs-keyword">sizeof</span>(gdt) - <span class="hljs-number">1</span>, (uint32_t)gdt<br>&#125;;<br>lgdt(&amp;gdt_pd);<br></code></pre></td></tr></table></figure>
+<p>系统启动时cs为8H,ds为10H.</p>
+<p>gdt[x]描述了该段的工作方式。其下标x指名当cs/ds为x&lt;&lt;3时，该描述符生效。</p>
+<h2 id="IDT的结构"><a href="#IDT的结构" class="headerlink" title="IDT的结构"></a>IDT的结构</h2><p><img src="/blog_images/0_12833186831ecn.gif" alt=""><br>IDT是一个最大为256项的表，每个表项为8字节。称为中断门。CPU通过IDT.base+n*8来寻找门。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">/* Gate descriptors for interrupts and traps */</span><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">gatedesc</span> &#123;</span><br>    <span class="hljs-keyword">unsigned</span> gd_off_15_0 : <span class="hljs-number">16</span>;        <span class="hljs-comment">// low 16 bits of offset in segment</span><br>    <span class="hljs-keyword">unsigned</span> gd_ss : <span class="hljs-number">16</span>;            <span class="hljs-comment">// segment selector</span><br>    <span class="hljs-keyword">unsigned</span> gd_args : <span class="hljs-number">5</span>;            <span class="hljs-comment">// # args, 0 for interrupt/trap gates</span><br>    <span class="hljs-keyword">unsigned</span> gd_rsv1 : <span class="hljs-number">3</span>;            <span class="hljs-comment">// reserved(should be zero I guess)</span><br>    <span class="hljs-keyword">unsigned</span> gd_type : <span class="hljs-number">4</span>;            <span class="hljs-comment">// type(STS_&#123;TG,IG32,TG32&#125;)</span><br>    <span class="hljs-keyword">unsigned</span> gd_s : <span class="hljs-number">1</span>;                <span class="hljs-comment">// must be 0 (system)</span><br>    <span class="hljs-keyword">unsigned</span> gd_dpl : <span class="hljs-number">2</span>;            <span class="hljs-comment">// descriptor(meaning new) privilege level</span><br>    <span class="hljs-keyword">unsigned</span> gd_p : <span class="hljs-number">1</span>;                <span class="hljs-comment">// Present</span><br>    <span class="hljs-keyword">unsigned</span> gd_off_31_16 : <span class="hljs-number">16</span>;        <span class="hljs-comment">// high bits of offset in segment</span><br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>组成:（陷阱门、中断门）</p>
+<ol>
+<li>32 位中断地址: 中断服务程序的地址</li>
+<li>16 位段选择地址:中断服务程序的段地址</li>
+<li>4  位类型:    STS_{TG,IG32,TG32}</li>
+<li>2  位的DPL:DPL(Descriptor Privilege Level)域标志着中断的特权级，0为特权级，3为用户。</li>
+</ol>
+<figure class="hljs highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attr">#define SETGATE(gate, istrap, sel, off, dpl) &#123;            \<br>    (gate).gd_off_15</span>_<span class="hljs-number">0</span> = <span class="hljs-comment">(uint32_t)</span><span class="hljs-comment">(off)</span> &amp; <span class="hljs-number">0</span>xffff;        \<br>    <span class="hljs-comment">(gate)</span>.gd_ss = <span class="hljs-comment">(sel)</span>;                                \<br>    <span class="hljs-comment">(gate)</span>.gd_args = <span class="hljs-number">0</span>;                                    \<br>    <span class="hljs-comment">(gate)</span>.gd_rsv<span class="hljs-number">1</span> = <span class="hljs-number">0</span>;                                    \<br>    <span class="hljs-comment">(gate)</span>.gd_type = <span class="hljs-comment">(istrap)</span> ? STS_T<span class="hljs-name">G32</span> : STS_I<span class="hljs-name">G32</span>;    \<br>    <span class="hljs-comment">(gate)</span>.gd_s = <span class="hljs-number">0</span>;                                    \<br>    <span class="hljs-comment">(gate)</span>.gd_dpl = <span class="hljs-comment">(dpl)</span>;                                \<br>    <span class="hljs-comment">(gate)</span>.gd_p = <span class="hljs-number">1</span>;                                    \<br>    <span class="hljs-comment">(gate)</span>.gd_off_<span class="hljs-number">31</span>_<span class="hljs-number">16</span> = <span class="hljs-comment">(uint32_t)</span><span class="hljs-comment">(off)</span> &gt;&gt; <span class="hljs-number">16</span>;        \<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">gatedesc</span> <span class="hljs-title">idt</span>[256] = &#123;</span>&#123;<span class="hljs-number">0</span>&#125;&#125;;<br><br><span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">pseudodesc</span> <span class="hljs-title">idt_pd</span> = &#123;</span><br>    <span class="hljs-keyword">sizeof</span>(idt) - <span class="hljs-number">1</span>, (<span class="hljs-keyword">uintptr_t</span>)idt<br>&#125;;<br><span class="hljs-keyword">while</span> ( ++i &lt; <span class="hljs-number">256</span> ) &#123;<br>    SETGATE(idt[i],<span class="hljs-number">1</span>,GD_KTEXT,__vectors[i],DPL_KERNEL);<br>&#125;<br>SETGATE(idt[T_SWITCH_TOK], <span class="hljs-number">0</span>, GD_KTEXT, __vectors[T_SWITCH_TOK], DPL_USER);<br><br>lidt(&amp;idt_pd);<br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/操作系统/" rel="tag"><i class="fas fa-tags"></i>操作系统</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.JPG" alt="支付宝">
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2015/05/02/2016/erlang/" rel="next" title="erlang:闭包与伪递归"><i class="fas fa-angle-left"></i><span class="nav-title">erlang:闭包与伪递归</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2016/05/02/2017/docker的简单使用/" rel="prev" title="docker的使用"><span class="nav-title">docker的使用</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "erow",
+      "repo": "hexo_blog",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "中断描述表(idt)和全局描述符表(GDT)",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="erow">
+  
+  <h1 class="author-name">erow</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">27</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#GDT-的结构"><span class="toc-text">GDT 的结构</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#初始化GDT"><span class="toc-text">初始化GDT</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#IDT的结构"><span class="toc-text">IDT的结构</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:clouderow@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/erow" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><a href="" target="_blank">虚位以待</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">erow</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

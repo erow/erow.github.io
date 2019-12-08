@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, erow">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="erow's blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized-light.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>泛化程度 | erow's blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">erow's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container" style="background: url(/images/background.png);">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://erow.github.io/2019/05/17/2019/泛化程度/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="erow">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="erow's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">泛化程度</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-17T08:29:26+00:00">2019-05-17 16:29:26</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/论文/" itemprop="url" rel="index"><span itemprop="name">论文</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><p>可能一些词语使用的不太恰当,一时也想不出好的词,可能存在冒用.  </p>
+<ul>
+<li>有效区间: 激活函数导数较大的区域.如果导数很小,那么梯度无法传播,权值得不到调整,因此认为是无效的(sigmoid的有效区域为(-3,3),tanh为(-1,1) 这类曲线的界限比较模糊. Hardtanh,或ReLU这类分段线性的函数则是确定的)  </li>
+<li>泛化程度:如果较少的数据用来学习,那么泛化能力必然低;反之亦然.类似,训练样本在神经有效区域内的数目,决定了学习的空间.数目越多则泛化程度越高. 用t=有效区域内的样本/样本总数 表示.  </li>
+<li>宽度: 有效区间长度/2  </li>
+<li>中心: 有效区间的中心.</li>
+</ul>
+<p>前面尝试在激活函数前,通过一系数k使得神经元在训练集中被激活的比例达到t.  </p>
+<p>在神经网络激活函数前增加一系数k:<br>$$g(k<em>Z),Z = w x +b$$<br>假设g为sigmoid.k越大,则其有效区域越小;反之越大.<br>$$ width=\frac{1}{k</em>w}, center = -b/w$$<br>k可以改变有效区域长度,而不改变其中心.</p>
+<p>由于系数k直接直接根据激活占比t,只能改变宽度.这样直接固定了神经元的泛化程度,实际上减少了神经元的差异性.<br><img src="/blog_images/2019-05-17-20-05-19.png" alt=""></p>
+<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a><a href="https://www.kaggle.com/clouderow/nn-nb1?scriptVersionId=14292401" target="_blank" rel="noopener">实验</a></h1><p>生成的数据主要集中在原点附近,同时引入一点干扰以确认不会过拟合.<br><img src="/blog_images/2019-05-17-18-20-50.png" alt=""></p>
+<p>网络结构如下:</p>
+<pre><code>mid =50
+model = nn.Sequential(
+    nn.Linear(1,mid),
+    nn.Tanh(), # 有效趋于为-1~1,比sigmoid更好判断.
+    nn.Linear(mid,1)
+)
+</code></pre><h2 id="结果一-center和loss"><a href="#结果一-center和loss" class="headerlink" title="结果一: center和loss"></a>结果一: center和loss</h2><p>经过16001轮训练后,我发现其50个神经元的中心移动轨迹如下:<br><img src="/blog_images/2019-05-17-18-25-20.png" alt=""><br>横坐标是中心的位置,纵坐标是迭代的次数,同一颜色是同一神经元.(从下往上看就是一个神经元的中心变化情况)</p>
+<p>可以发现0-10和60-100之间出现了2次快速移动的情况.同时观察loss的变化,可以发现在神经元移动的同时,loss也在快速下降:<br><img src="/blog_images/2019-05-17-18-30-20.png" alt=""></p>
+<h2 id="结果二-center和width"><a href="#结果二-center和width" class="headerlink" title="结果二: center和width"></a>结果二: center和width</h2><p>观察中心点和宽度的关系,图左为未训练的关系图,图右为训练后:<br><img src="/blog_images/2019-05-17-18-36-47.png" alt="初始状态"><img src="/blog_images/2019-05-17-18-35-01.png" alt="训练后"><br>可以明显观察到,原点附近的神经元宽度更小.</p>
+<h2 id="结果三-shift"><a href="#结果三-shift" class="headerlink" title="结果三: shift"></a>结果三: shift</h2><p>$$ width=\frac{1}{w}=\frac{center}{-b}=, center = -b/w$$<br>这表明神经网络可以在原点附近的刻画细致的形状,而远离原点趋于线性表达.因此对原有数据进行shift.<br>神经元未在0.5附近聚集,且其宽度也较大,因此拟合程度欠佳.<br><img src="/blog_images/2019-05-17-19-01-26.png" alt=""><img src="/blog_images/2019-05-17-19-02-00.png" alt=""></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>训练神经元可以分为2个阶段,移动和塑形.移动阶段,loss能快速地下降,这也是调整网络形状的黄金时期.而在塑性阶段,由于只改变后面一层网络的权值所以修改幅度有限,loss下降缓慢,趋于收敛.</p>
+<p>更小的宽度有利于刻画更加细致的形状.</p>
+<p>理想的center-width为 神经元聚集在数据密集的地方,且越密集width越小. </p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>以上讨论说明了数据处理的重要性.最好将其处理的到(0,1). 但是如果真实数据是双峰的呢?</p>
+<p>能否提出一种权值初始化的方案, 使得网络一开始就能快速学习?</p>
+<p>用正态分布初始化权值,聚集在0.5附近;10001轮以后<br><img src="/blog_images/2019-05-17-20-34-21.png" alt=""><img src="/blog_images/2019-05-17-20-36-09.png" alt=""></p>
+<p>分段线性函数(Hardtanh,ReLU等)区别挺大的.移动不明显.</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/ML/" rel="tag"><i class="fas fa-tags"></i>ML</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.JPG" alt="支付宝">
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/11/2019/HAR/" rel="next" title="HAR"><i class="fas fa-angle-left"></i><span class="nav-title">HAR</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/09/14/2019/Android/" rel="prev" title="Android"><span class="nav-title">Android</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "erow",
+      "repo": "hexo_blog",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "泛化程度",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="erow">
+  
+  <h1 class="author-name">erow</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">27</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#术语"><span class="toc-text">术语</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#实验"><span class="toc-text">实验</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#结果一-center和loss"><span class="toc-text">结果一: center和loss</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#结果二-center和width"><span class="toc-text">结果二: center和width</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#结果三-shift"><span class="toc-text">结果三: shift</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#结论"><span class="toc-text">结论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:clouderow@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/erow" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><a href="" target="_blank">虚位以待</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">erow</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, erow">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="erow's blog" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized-light.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += " has-jax";
+      }
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>查找中点 | erow's blog</title>
+  </head>
+  <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">erow's blog</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/">首页</a></li>
+        
+        <li role="menuitem"><a href="/archives/">归档</a></li>
+        
+        <li role="menuitem"><a href="/categories/">分类</a></li>
+        
+        <li role="menuitem"><a href="/tags/">标签</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container" style="background: url(/images/background.png);">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card animate" itemscope="" itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://erow.github.io/2015/05/02/2016/find_middle_element/">
+      <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="erow">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="erow's blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">查找中点</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2015-05-02T05:01:00+00:00">2015-05-02 13:01:00</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>有这么一道面试题:</p>
+<blockquote>
+<p>找出未知单链表中点元素。</p>
+</blockquote>
+<p>市面上有2种方法:</p>
+<ol>
+<li>先遍历算出总长度为length，再遍历length/2个元素。</li>
+<li>使用快慢指针。快指针步长为2，慢指针为1。快指针到达链表末端时，慢指针正好为中点元素。</li>
+</ol>
+<p>然而这2种方法本质上没有差别。</p>
+<p>###废话不说先上结果:</p>
+<blockquote>
+<p>0.00027776 s : find_mid   循环法<br>0.000276798 s : find_mid_1  双指针<br>2.81981 s : find_mid            提高指针取得下一个元素的代价<br>2.81391 s : find_mid_1</p>
+</blockquote>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;thread&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/timeb.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;time.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;windows.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">list</span> &#123;</span><br><span class="hljs-keyword">private</span>:<br>	<span class="hljs-built_in">list</span> *next = <span class="hljs-literal">nullptr</span>;<br>	<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-keyword">int</span> m_d;<br>	<span class="hljs-function"><span class="hljs-built_in">list</span>* <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-built_in">list</span>* p)</span> </span>&#123; next = p; <span class="hljs-keyword">return</span> p;  &#125;<br>	<span class="hljs-function"><span class="hljs-built_in">list</span>* <span class="hljs-title">get_next</span><span class="hljs-params">()</span> </span>&#123; Sleep(delay); <span class="hljs-keyword">return</span> next; &#125;<br>	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> delay;<br>&#125;;<br><span class="hljs-keyword">int</span> <span class="hljs-built_in">list</span>::delay = <span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-built_in">list</span>* <span class="hljs-title">find_mid</span><span class="hljs-params">(<span class="hljs-built_in">list</span>* ptr)</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> len = <span class="hljs-number">0</span>;<br>	<span class="hljs-built_in">list</span> *p_start = ptr;<br>	<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)<br>	&#123;<br>		<span class="hljs-keyword">if</span> (!p_start)<br>			<span class="hljs-keyword">break</span>;<br>		len++;<br>		p_start = p_start-&gt;get_next();<br>	&#125;<br>	len /= <span class="hljs-number">2</span>; p_start = ptr;<br>	<span class="hljs-keyword">while</span> (len--)<br>	&#123;<br>		p_start = p_start-&gt;get_next();<br>	&#125;<br>	<span class="hljs-keyword">return</span> p_start;<br>&#125;<br><span class="hljs-function"><span class="hljs-built_in">list</span>* <span class="hljs-title">find_mid_1</span><span class="hljs-params">(<span class="hljs-built_in">list</span>* ptr)</span><br></span>&#123;<br>	<span class="hljs-built_in">list</span> *p_s1 = ptr, *p_s2 = ptr;<br>	<span class="hljs-keyword">while</span> (p_s2=p_s2-&gt;get_next())<br>	&#123;<br>		p_s2 = p_s2-&gt;get_next();<br>		<span class="hljs-keyword">if</span> (!p_s2)<br>			<span class="hljs-keyword">break</span>;<br>		p_s1 = p_s1-&gt;get_next(); <br>	&#125;<br>	<span class="hljs-keyword">return</span> p_s1;<br>&#125;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> cal_time(fun,ptr)	&#123;\<br>	QueryPerformanceCounter(&amp;startCount);\<br>	fun(ptr);\<br>	QueryPerformanceCounter(&amp;endCount);\<br>	double elapsed = (double)(endCount.QuadPart - startCount.QuadPart) / freq.QuadPart;\<br>	cout &lt;&lt; elapsed&lt;&lt;<span class="hljs-meta-string">" s : "</span>&lt;&lt; #fun   &lt;&lt; endl;&#125;</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> c = <span class="hljs-number">1</span>*<span class="hljs-number">1000</span>;<br>	<span class="hljs-built_in">list</span> * start = <span class="hljs-keyword">new</span> <span class="hljs-built_in">list</span>,*p;<br>	p = start;<br>	<span class="hljs-keyword">while</span> (c--)<br>	&#123;<br>		p = p-&gt;add(<span class="hljs-keyword">new</span> <span class="hljs-built_in">list</span>);<br>		p-&gt;m_d = c;<br>	&#125;<br>	LARGE_INTEGER startCount;<br>	LARGE_INTEGER endCount;<br>	LARGE_INTEGER freq;<br>	QueryPerformanceFrequency(&amp;freq);<br>	_ASSERT(find_mid_1(start) == find_mid(start));<br>	cal_time(find_mid, start);<br>	cal_time(find_mid_1, start);<br>	<span class="hljs-built_in">list</span>::delay = <span class="hljs-number">1</span>;<br><br>	cal_time(find_mid, start);<br>	cal_time(find_mid_1, start);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>#分析<br>其实这2种方法都是O(n),使用大O表示法不够精确，这种简单的算法直接数一下next的调用次数就可以知道都是1.5*len个get_next().find_mid_1 唯一的优势就是少用了一个 int len。所以性能提升实在少的可怜。</p>
+<p>#下面给出正确的方案<br>思路:其实也是用到了2个指针，其中一个走过的路程是另一个的1/2。但千万不要使用一个+1另一个+2。而是在前一个指针遍历的时候保存下来给另一个指针。</p>
+<p>##原理:<br>虽然我们不能预知链表的长度，但是我们可以<strong>预期</strong>。</p>
+<p>当<strong>前一个指针</strong>移动了n步时，将这个值赋值给<strong>后一个指针</strong>，然后<strong>预期</strong>前一个指针能访问到2n,如果<strong>预期达成</strong>，那么<strong>继续开展预期</strong>。如果<strong>预期失败</strong>，那么中点为上一次预期成功的点再移动 c/2步。</p>
+<p>##分析:<br><strong>上一次预期成功的点</strong>就是节约计算的关键。</p>
+<p>最好情况为:预期成功了，然后链表也到底了。</p>
+<p>最差情况为:链表长度为2^n-1。<strong>上一次预期成功的点</strong>为(2^(n-2))然后还要再走(2^(n-2))步。</p>
+<p>当然如果增加期望点，性能还有望提升。<br><figure class="hljs highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">list</span>* find_mid_2(<span class="hljs-keyword">list</span>* ptr)<br>&#123;<br>	<span class="hljs-keyword">list</span> *p_s1 = ptr, *p_s2 = ptr, *tmp= ptr;<br>	<span class="hljs-keyword">int</span> d = <span class="hljs-number">1</span>,t=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>)<br>	&#123;<br>		<br>		tmp = p_s2;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> c=<span class="hljs-number">0</span>; i &lt; d; i++,c++)<br>		&#123;<br>			p_s2 = p_s2-&gt;get_next();<br>			<span class="hljs-keyword">if</span> (!p_s2)<br>			&#123;<br>				<span class="hljs-keyword">int</span> len = c / <span class="hljs-number">2</span>;<br>				<span class="hljs-keyword">while</span> (len--)<br>					&#123;<br>						p_s1 = p_s1-&gt;get_next();<br>					&#125;<br>				<span class="hljs-keyword">return</span> p_s1;<br>			&#125;<br>		&#125;<br>		d *= <span class="hljs-number">2</span>;<br>		p_s1 = tmp;<br>	&#125;<br>	<span class="hljs-keyword">return</span> p_s1;<br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p>来看效果吧</p>
+<blockquote>
+<p>最好情况<br>0.608294 s : find_mid<br>0.612391 s : find_mid_1<br>0.404288 s : find_mid_2</p>
+<p>最差情况<br>0.604105 s : find_mid<br>0.600299 s : find_mid_1<br>0.502341 s : find_mid_2</p>
+</blockquote>
+<p>我估算需要(1,1.25)n个get_next()操作。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;thread&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sys/timeb.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;time.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;windows.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;list&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;map&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-built_in">list</span>&lt;<span class="hljs-keyword">int</span>&gt; mlist;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> cal_time(fun,ptr)	&#123;\<br>	QueryPerformanceCounter(&amp;startCount);\<br>	fun(ptr);\<br>	QueryPerformanceCounter(&amp;endCount);\<br>	double elapsed = (double)(endCount.QuadPart - startCount.QuadPart) / freq.QuadPart;\<br>	cout &lt;&lt; elapsed&lt;&lt;<span class="hljs-meta-string">" s : "</span>&lt;&lt; #fun   &lt;&lt; endl;&#125;</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">stage</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>	mlist* msrc;<br>	<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, mlist::iterator, <span class="hljs-built_in">std</span>::greater&lt;<span class="hljs-keyword">int</span>&gt; &gt; m_map;<br>	stage(mlist&amp; m)<br>	&#123;<br>		msrc = &amp;m;<br>	&#125;<br>	mlist::iterator <span class="hljs-keyword">operator</span>[](<span class="hljs-keyword">int</span> n)<br>	&#123;<br>		<span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>)<br>			<span class="hljs-keyword">return</span> mlist::iterator();<br>		<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, mlist::iterator, <span class="hljs-built_in">std</span>::greater&lt;<span class="hljs-keyword">int</span>&gt; &gt;::iterator itr = m_map.find(n);<br>		<br>		<span class="hljs-keyword">if</span> (itr != m_map.end())<br>		&#123;<br>			<span class="hljs-keyword">return</span> itr-&gt;second;<br>		&#125;<br>		<span class="hljs-keyword">else</span><br>			<span class="hljs-keyword">return</span> <span class="hljs-keyword">operator</span>[](n/<span class="hljs-number">2</span>);<br>	&#125;<br>&#125;;<br><br>mlist::<span class="hljs-function">iterator <span class="hljs-title">find_mid_2</span><span class="hljs-params">(mlist ptr)</span> </span>&#123;<br>	<span class="hljs-function">stage <span class="hljs-title">probe_ptr</span><span class="hljs-params">(ptr)</span></span>;<br>	<span class="hljs-keyword">auto</span>&amp; m_map = probe_ptr.m_map;<br>	<span class="hljs-keyword">auto</span> itr = ptr.begin();<br>	m_map[<span class="hljs-number">1</span>] = itr;<br>	<span class="hljs-keyword">int</span> len = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">while</span> (itr!=ptr.end())<br>	&#123;<br>		<span class="hljs-keyword">auto</span> m_itr = m_map.begin();<br>		<span class="hljs-keyword">int</span> top_key=m_itr-&gt;first;<br>		<span class="hljs-keyword">while</span> (m_itr!=m_map.end())<br>		&#123;<br>			<span class="hljs-keyword">if</span>(m_itr-&gt;first&lt;top_key/<span class="hljs-number">2</span>)<br>				<span class="hljs-keyword">break</span>;<br>			<span class="hljs-keyword">if</span>(len==<span class="hljs-number">2</span>*top_key)<br>				m_map[len]=itr;<br>			m_itr++;<br>		&#125;<br>		<br>		itr++; len++;<br>	&#125; <br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> effect:m_map)<br>	&#123;<br>		<span class="hljs-keyword">int</span> k = effect.first;<br>		<span class="hljs-keyword">if</span> (m_map.find(k) != m_map.end())<br>		&#123;<br>			k = k / <span class="hljs-number">2</span>;<br>			<span class="hljs-keyword">auto</span> mid = m_map[k]; <br>			<span class="hljs-keyword">while</span> (k++&lt;len/<span class="hljs-number">2</span>)<br>			&#123;<br>				mid++;<br>			&#125;<br>			<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"res:"</span> &lt;&lt; *mid &lt;&lt; <span class="hljs-built_in">endl</span>;<br>			<span class="hljs-keyword">return</span> mid;<br>		&#125;<br>	&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> c = <span class="hljs-number">1</span> * <span class="hljs-number">10</span>;<br>	mlist  start;<br>	<span class="hljs-keyword">while</span> (c--)<br>	&#123;<br>		start.push_back(c);<br>	&#125;<br>	LARGE_INTEGER startCount;<br>	LARGE_INTEGER endCount;<br>	LARGE_INTEGER freq;<br>	QueryPerformanceFrequency(&amp;freq);<br><br>	cal_time(find_mid_2, start);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.JPG" alt="支付宝">
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2015/05/02/2016/process/" rel="next" title="几种不同的过程"><i class="fas fa-angle-left"></i><span class="nav-title">几种不同的过程</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2015/05/02/2016/onvif/" rel="prev" title="onvif"><span class="nav-title">onvif</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "erow",
+      "repo": "hexo_blog",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "查找中点",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="erow">
+  
+  <h1 class="author-name">erow</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">38</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">9</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">标签</div>
+      <div><a href="/tags/">27</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>社交链接<p></p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:clouderow@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/erow" target="_blank">GitHub</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>友情链接</div>
+      <ul>
+        
+        <li><a href="" target="_blank">虚位以待</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">erow</span><span class="year"><i class="far fa-copyright"></i>2019 - 2019</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">BY-SA 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

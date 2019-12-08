@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>erow&#39;s blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://erow.github.io/"/>
+  <updated>2019-12-08T11:20:18.688Z</updated>
+  <id>http://erow.github.io/</id>
+  
+  <author>
+    <name>erow</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一支红杏</title>
+    <link href="http://erow.github.io/2019/09/14/2019/%E4%B8%80%E6%94%AF%E7%BA%A2%E6%9D%8F/"/>
+    <id>http://erow.github.io/2019/09/14/2019/一支红杏/</id>
+    <published>2019-09-14T09:21:10.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;方案设计&quot;&gt;&lt;a href=&quot;#方案设计&quot; class=&quot;headerlink&quot; title=&quot;方案设计&quot;&gt;&lt;/a&gt;方案设计&lt;/h1&gt;&lt;h2 id=&quot;主要问题&quot;&gt;&lt;a href=&quot;#主要问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="网络" scheme="http://erow.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络技术" scheme="http://erow.github.io/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android</title>
+    <link href="http://erow.github.io/2019/09/14/2019/Android/"/>
+    <id>http://erow.github.io/2019/09/14/2019/Android/</id>
+    <published>2019-09-14T09:21:10.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%e5%ae%89%e5%8d%93%e6%80%bb%e8%a7%88&quot;&gt;安卓总览&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="project" scheme="http://erow.github.io/categories/project/"/>
+    
+    
+      <category term="android" scheme="http://erow.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>泛化程度</title>
+    <link href="http://erow.github.io/2019/05/17/2019/%E6%B3%9B%E5%8C%96%E7%A8%8B%E5%BA%A6/"/>
+    <id>http://erow.github.io/2019/05/17/2019/泛化程度/</id>
+    <published>2019-05-17T08:29:26.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerlink&quot; title=&quot;术语&quot;&gt;&lt;/a&gt;术语&lt;/h1&gt;&lt;p&gt;可能一些词语使用的不太恰当,一时也想不出好的词,可能存在冒用.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有效区间:
+        
+      
+    
+    </summary>
+    
+      <category term="论文" scheme="http://erow.github.io/categories/%E8%AE%BA%E6%96%87/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HAR</title>
+    <link href="http://erow.github.io/2019/05/11/2019/HAR/"/>
+    <id>http://erow.github.io/2019/05/11/2019/HAR/</id>
+    <published>2019-05-11T01:15:13.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数据集&quot;&gt;&lt;a href=&quot;#数据集&quot; class=&quot;headerlink&quot; title=&quot;数据集&quot;&gt;&lt;/a&gt;数据集&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="［论文］" scheme="http://erow.github.io/tags/%EF%BC%BB%E8%AE%BA%E6%96%87%EF%BC%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文计划</title>
+    <link href="http://erow.github.io/2019/05/07/2019/%E8%AE%BA%E6%96%87%E8%AE%A1%E5%88%92/"/>
+    <id>http://erow.github.io/2019/05/07/2019/论文计划/</id>
+    <published>2019-05-07T06:05:29.000Z</published>
+    <updated>2019-12-08T11:20:18.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;我想写一篇关于修改数据分布提升神经网络性能的文章.我认为神经网络是通过选择数据中的部分关键数据,不断进行筛选,汇总,最后达到极高的性能.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ssci2019.org/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="［翻译,资料］" scheme="http://erow.github.io/tags/%EF%BC%BB%E7%BF%BB%E8%AF%91-%E8%B5%84%E6%96%99%EF%BC%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KSelection</title>
+    <link href="http://erow.github.io/2019/05/05/2019/Kselection/"/>
+    <id>http://erow.github.io/2019/05/05/2019/Kselection/</id>
+    <published>2019-05-05T04:26:01.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;如果把神经网络分为&lt;strong&gt;选择&lt;/strong&gt;与&lt;strong&gt;重构&lt;/strong&gt;两个部分,神经网络能够不断剔除无用信息(针对任务),保留有效信息,从而归结出结论(识别或者回归).那么可不可以通过修改选择来提升网络性能?&lt;/p&gt;
+&lt;h1
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="［构想］" scheme="http://erow.github.io/tags/%EF%BC%BB%E6%9E%84%E6%83%B3%EF%BC%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hopfield Network</title>
+    <link href="http://erow.github.io/2019/05/04/2019/Hopfield/"/>
+    <id>http://erow.github.io/2019/05/04/2019/Hopfield/</id>
+    <published>2019-05-04T10:26:01.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;Hopfield Network
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="［神经网络,TODO］" scheme="http://erow.github.io/tags/%EF%BC%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-TODO%EF%BC%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理解神经元</title>
+    <link href="http://erow.github.io/2019/04/29/2019/%E7%90%86%E8%A7%A3%E7%A5%9E%E7%BB%8F%E5%85%83/"/>
+    <id>http://erow.github.io/2019/04/29/2019/理解神经元/</id>
+    <published>2019-04-29T01:26:01.000Z</published>
+    <updated>2019-12-08T11:20:18.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;神经元计算公式为:&lt;br&gt;$$a=g(w_i^T x)$$&lt;br&gt;g为sigmoid函数,其特点是在左侧接近0,在右侧接近1,其导数也具备类似性质.&lt;br&gt;&lt;img src=&quot;/blog_images/2019-04-29-09-43-05.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="［构想］" scheme="http://erow.github.io/tags/%EF%BC%BB%E6%9E%84%E6%83%B3%EF%BC%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>广电网络</title>
+    <link href="http://erow.github.io/2019/04/20/2019/%E5%B9%BF%E7%94%B5%E7%BD%91%E7%BB%9C/"/>
+    <id>http://erow.github.io/2019/04/20/2019/广电网络/</id>
+    <published>2019-04-20T08:53:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;家里的电视盒升级了,过来的安装的时候发现除了一个机顶盒还有一个解调器.那么问题来了,能否白嫖广电的网络呢?&lt;br&gt;&lt;img src=&quot;/blog_images/2019-04-20-19-46-31.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="网络" scheme="http://erow.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Neuroplasticity Network</title>
+    <link href="http://erow.github.io/2019/04/19/2019/TSMCS/"/>
+    <id>http://erow.github.io/2019/04/19/2019/TSMCS/</id>
+    <published>2019-04-19T01:53:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="遗传算法" scheme="http://erow.github.io/tags/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>遗传算法</title>
+    <link href="http://erow.github.io/2019/04/18/2019/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/"/>
+    <id>http://erow.github.io/2019/04/18/2019/遗传算法/</id>
+    <published>2019-04-18T07:53:54.000Z</published>
+    <updated>2019-12-08T11:20:18.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;算法介绍&quot;&gt;&lt;a href=&quot;#算法介绍&quot; class=&quot;headerlink&quot; title=&quot;算法介绍&quot;&gt;&lt;/a&gt;算法介绍&lt;/h1&gt;&lt;p&gt;遗传算法（Genetic Algorithm,
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="遗传算法" scheme="http://erow.github.io/tags/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何理解神经网络</title>
+    <link href="http://erow.github.io/2019/04/16/2019/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>http://erow.github.io/2019/04/16/2019/如何理解神经网络/</id>
+    <published>2019-04-16T08:44:01.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;假设&quot;&gt;&lt;a href=&quot;#假设&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="［构想］" scheme="http://erow.github.io/tags/%EF%BC%BB%E6%9E%84%E6%83%B3%EF%BC%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>绘图</title>
+    <link href="http://erow.github.io/2019/04/07/2019/%E7%BB%98%E5%9B%BE/"/>
+    <id>http://erow.github.io/2019/04/07/2019/绘图/</id>
+    <published>2019-04-07T09:27:54.000Z</published>
+    <updated>2019-12-08T11:20:18.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;绘制图形的工具比较多，常用的有matplotlib，plotly，以及pytorch的visdom。matplotlib用的比较多，功能也十分强大也比较底层。可以设置的参数也多，用起来比较麻烦。相反visdom使用更加简便，也提供了足够的功能。两者最大的区别是，visdom
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="skill" scheme="http://erow.github.io/tags/skill/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The 1cycle policy</title>
+    <link href="http://erow.github.io/2019/03/14/2019/one%20cycle%20policy/"/>
+    <id>http://erow.github.io/2019/03/14/2019/one cycle policy/</id>
+    <published>2019-03-14T09:27:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://sgugger.github.io/the-1cycle-policy.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原文&lt;/a&gt;&lt;br&gt;本文介绍一种能够快速获得模型结果，并提高精度。首先介绍Leslie
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="Learning Rate" scheme="http://erow.github.io/tags/Learning-Rate/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>numpy 性能提升</title>
+    <link href="http://erow.github.io/2019/02/18/2019/numpy/"/>
+    <id>http://erow.github.io/2019/02/18/2019/numpy/</id>
+    <published>2019-02-18T01:53:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Copies-and-Views&quot;&gt;&lt;a href=&quot;#Copies-and-Views&quot; class=&quot;headerlink&quot; title=&quot;Copies and Views&quot;&gt;&lt;/a&gt;Copies and
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="cnn" scheme="http://erow.github.io/tags/cnn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>lenet5</title>
+    <link href="http://erow.github.io/2019/02/13/2019/CNN/"/>
+    <id>http://erow.github.io/2019/02/13/2019/CNN/</id>
+    <published>2019-02-13T06:13:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;http://yann.lecun.com/exdb/lenet/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;lenet5&lt;/a&gt; 实现了手写数字的识别。其关键在于CNN的使用。其结构如下：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="cnn" scheme="http://erow.github.io/tags/cnn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SVM</title>
+    <link href="http://erow.github.io/2019/02/12/2019/SVM/"/>
+    <id>http://erow.github.io/2019/02/12/2019/SVM/</id>
+    <published>2019-02-12T09:13:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基本问题&quot;&gt;&lt;a href=&quot;#基本问题&quot; class=&quot;headerlink&quot; title=&quot;基本问题&quot;&gt;&lt;/a&gt;基本问题&lt;/h1&gt;&lt;p&gt;在一个线性可分的训练集中，求一条直线将2类数据分开，并使得其间隔最大化。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="SVM" scheme="http://erow.github.io/tags/SVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Neural Network</title>
+    <link href="http://erow.github.io/2019/01/27/2019/Neural%20Network/"/>
+    <id>http://erow.github.io/2019/01/27/2019/Neural Network/</id>
+    <published>2019-01-27T02:13:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;反向传播网络&quot;&gt;&lt;a href=&quot;#反向传播网络&quot; class=&quot;headerlink&quot; title=&quot;反向传播网络&quot;&gt;&lt;/a&gt;反向传播网络&lt;/h1&gt;&lt;p&gt;反向传播是神经网络中求最优参数的一个运用梯度下降算法的应用。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="NN" scheme="http://erow.github.io/tags/NN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优化问题</title>
+    <link href="http://erow.github.io/2019/01/14/2019/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/"/>
+    <id>http://erow.github.io/2019/01/14/2019/优化问题/</id>
+    <published>2019-01-14T05:13:54.000Z</published>
+    <updated>2019-12-08T11:20:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在机器学习中，当准备好数据集并设计好模型后，下一步工作就是训练。训练过程就是把模型中的参数调至最优。训练过程的核心就是数值优化算法。常用的方法为梯度下降与牛顿法，拟牛顿法是在牛顿法上面的改进。&lt;/p&gt;
+&lt;h1 id=&quot;梯度下降&quot;&gt;&lt;a href=&quot;#梯度下降&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="ML" scheme="http://erow.github.io/categories/ML/"/>
+    
+    
+      <category term="ML" scheme="http://erow.github.io/tags/ML/"/>
+    
+      <category term="牛顿法" scheme="http://erow.github.io/tags/%E7%89%9B%E9%A1%BF%E6%B3%95/"/>
+    
+      <category term="梯度下降" scheme="http://erow.github.io/tags/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D/"/>
+    
+      <category term="数值优化" scheme="http://erow.github.io/tags/%E6%95%B0%E5%80%BC%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>送餐机器人</title>
+    <link href="http://erow.github.io/2019/01/03/2019/%E9%80%81%E9%A4%90%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    <id>http://erow.github.io/2019/01/03/2019/送餐机器人/</id>
+    <published>2019-01-03T12:21:10.000Z</published>
+    <updated>2019-12-08T11:20:18.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;目前已经跑路大半年了，回想起来在原来的公司也待了近10个月时间。虽然总觉得在那里呆的不舒畅，没有合适的空间，甚至有些不愿提及。但是毕竟待了那么久，即使有什么不满与失意也不应该否定自己曾经的努力。做错了一些事情就更应该直视错误，努力去改正，并从中吸取经验和教训。牢骚就不说了，
+        
+      
+    
+    </summary>
+    
+      <category term="project" scheme="http://erow.github.io/categories/project/"/>
+    
+    
+      <category term="agv" scheme="http://erow.github.io/tags/agv/"/>
+    
+      <category term="机器人" scheme="http://erow.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
+  
+</feed>
